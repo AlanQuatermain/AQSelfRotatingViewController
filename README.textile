@@ -1,0 +1,9 @@
+h2. A Self-Rotating View Controller
+
+If you have a need to place a view controller directly into a window, without it being a child of that window's root view controller, then you'll likely have found that rotation doesn't happen automatically for you. Which is a serious pain. This class has the answer.
+
+h4. Using AQSelfRotatingViewController
+
+Make your controller class a subclass of @AQSelfRotatingViewController@. Before adding its @-view@ to your @UIWindow@, be sure to call @-viewWillAppear:@, and also call @-viewDidAppear:@ after adding it. Likewise call @-viewWillDisappear:@ and @-viewDidDisappear:@ when removing the view from the window.
+
+That's it. No, really-- that's it.
