@@ -37,6 +37,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "AQSelfRotatingViewController.h"
 
 @implementation AQSelfRotatingViewController
 
@@ -154,12 +155,12 @@
 			break;
 		}
 	}
-	
+
 	CGAffineTransform rotation = CGAffineTransformMakeRotation( angle );
 	
 	[UIView beginAnimations: @"" context: NULL];
 	[UIView setAnimationDuration: 0.4];
-	self.view.transform = CGAffineTransformConcat(self.view.transform, rotation);
+	self.view.transform = CGAffineTransformConcat(rotation, self.view.transform);
 	[UIView commitAnimations];
 }
 
